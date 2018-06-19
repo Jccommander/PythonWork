@@ -106,14 +106,14 @@ with open(output_path, 'w', newline='') as csvfile:
 
     # Write the individual lines to be printed to the text file
 
-    electionwriter.writerow("Election Results")
-    electionwriter.writerow("---------------------------")
-    electionwriter.writerow(f"Total Votes: {total_vote}")
-    electionwriter.writerow("---------------------------")
+    electionwriter.writerow(["Election Results"])
+    electionwriter.writerow(["---------------------------"])
+    electionwriter.writerow([f"Total Votes: {total_vote}"])
+    electionwriter.writerow(["---------------------------"])
 
     for candidate in can_list:
-        electionwriter.writerow(candidate + ": " + str(percent_dict[candidate]) + "% (" + str(can_dict[candidate]) + ")")
+        electionwriter.writerow([candidate + ": " + str(percent_dict[candidate]) + "% (" + str(can_dict[candidate]) + ")"])
 
-    electionwriter.writerow("---------------------------")
-    electionwriter.writerow(f"Winner: {winner_str}")
-    electionwriter.writerow("---------------------------")
+    electionwriter.writerow(["---------------------------"])
+    electionwriter.writerow([f"Winner: {winner_str}"])
+    electionwriter.writerow(["---------------------------"])

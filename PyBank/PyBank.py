@@ -98,10 +98,11 @@ with open(output_path, 'w', newline='') as csvfile:
     financewriter = csv.writer(csvfile, delimiter=',')
 
     # Write the individual lines to be printed to the text file
-    financewriter.writerow("Financial Analysis")
-    financewriter.writerow("------------------------------")
-    financewriter.writerow(f"Total Months: {totalmonths}")
-    financewriter.writerow(f"Total: ${totalprofits}")
-    financewriter.writerow(f"Average Change: ${final_avg}")
-    financewriter.writerow(f"Greatest Increase in Profits: {great_inc_string} (${greatest_inc})")
-    financewriter.writerow(f"Greatest Decrease in Profits: {great_dec_string} (${greatest_dec})")
+
+    financewriter.writerow(["Financial Analysis"])
+    financewriter.writerow(["------------------------------"])
+    financewriter.writerow([f"Total Months: {totalmonths}"])
+    financewriter.writerow([f"Total: ${totalprofits}"])
+    financewriter.writerow([f"Average Change: ${final_avg}"])
+    financewriter.writerow([f"Greatest Increase in Profits: {great_inc_string} (${greatest_inc})"])
+    financewriter.writerow([f"Greatest Decrease in Profits: {great_dec_string} (${greatest_dec})"])
