@@ -91,3 +91,29 @@ print(f"Winner: {winner_str}")
 print("---------------------------")
 
 # Export results in a text file
+
+    # Set an output path for the text file
+
+output_path = os.path.join(".", "Election-Results.csv")
+
+    # Create and open the new text file
+
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Set the file to write
+
+    electionwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the individual lines to be printed to the text file
+
+    electionwriter.writerow("Election Results")
+    electionwriter.writerow("---------------------------")
+    electionwriter.writerow(f"Total Votes: {total_vote}")
+    electionwriter.writerow("---------------------------")
+
+    for candidate in can_list:
+        electionwriter.writerow(candidate + ": " + str(percent_dict[candidate]) + "% (" + str(can_dict[candidate]) + ")")
+
+    electionwriter.writerow("---------------------------")
+    electionwriter.writerow(f"Winner: {winner_str}")
+    electionwriter.writerow("---------------------------")

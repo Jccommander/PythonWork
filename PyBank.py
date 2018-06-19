@@ -84,3 +84,24 @@ print(f"Greatest Increase in Profits: {great_inc_string} (${greatest_inc})")
 print(f"Greatest Decrease in Profits: {great_dec_string} (${greatest_dec})")
 
 # Write a new text file
+    
+    # Set an output path for the text file
+
+output_path = os.path.join(".", "Financial-Analysis.csv")
+
+    # Create and open the new text file
+
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Set the file to write
+
+    financewriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the individual lines to be printed to the text file
+    financewriter.writerow("Financial Analysis")
+    financewriter.writerow("------------------------------")
+    financewriter.writerow(f"Total Months: {totalmonths}")
+    financewriter.writerow(f"Total: ${totalprofits}")
+    financewriter.writerow(f"Average Change: ${final_avg}")
+    financewriter.writerow(f"Greatest Increase in Profits: {great_inc_string} (${greatest_inc})")
+    financewriter.writerow(f"Greatest Decrease in Profits: {great_dec_string} (${greatest_dec})")
